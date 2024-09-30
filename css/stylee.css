@@ -7,7 +7,6 @@ html,
 body {
   position: relative;
   height: 100%;
-
 }
 
 body {
@@ -20,6 +19,10 @@ body {
 
 .swiper {
   width: 95%;
+  height: 100%;
+}
+.swiper-wrapper{
+  
 }
 
 .swiper-slide {
@@ -29,13 +32,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 50vh;
+  height: 100%;
   object-fit: cover;
 }
 .swiper-pagination-bullet{
@@ -49,10 +51,5 @@ body {
         width: 20px;
         height: 20px;
     }
-    .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+   
 }
