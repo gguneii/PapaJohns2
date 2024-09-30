@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PapaJohns</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+      <!-- <link href="src/output.css" rel="stylesheet"> -->
+    <style>
+        .lists {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            font-family: "Open Sans Condensed", Arial, sans-serif;
+        }
+
+        .lists::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="">
+        <div class="relative pt-5">
+            <a class="w-[58px] h-[44px] lg:w-[160px] lg:pt-[15px]  xl:w-[270px] xl:left-5 xl:top-8 mx-4 justify-center absolute "
+                href="#">
+                <img src="../img/pj_logo_web_new.png" class="w-full" alt="logo">
+            </a>
+            <div class="header-list hidden lg:flex justify-between px-10 text-[20px] ml-[80px]  ">
+                <div class="ml-24 z-0">
+                    <ul class="flex text-[23px] font-bold">
+                        <li><a href="" class="px-3">Restoranlar</a></li>
+                        <li><a href="" class="px-3">PapaBonus</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex">
+                    <div class="flex relative font-bold font-sans text-center px-10">
+                        <img src="../img/flag_az.png" class="w-[33px] h-[33px]" alt="azflag">
+                        <p>Azerbaycanca</p>
+                        <i class="fa-solid fa-chevron-down absolute right-5 top-2"></i>
+                    </div>
+
+                    <div class="px-6 font-bold">
+                        Girish/Qeydiyyat
+                    </div>
+                    <div onclick="openPopup()"
+                        class="text-center cursor-pointer font-bold font-sans px-4 whitespace-nowrap">
+                        <i class="fa-solid fa-basket-shopping text-[25px]"></i>
+                        <p id="deskTotal">0 m</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mobile-nav lg:hidden flex gap-[40px] ml-[26%] justify-center">
+                <div class="w-[20%] px-4">
+                    <div class="font-bold w-[25px] h-[25px] font-sans text-center">
+                        <img src="../img/flag_az.png" class="w-full" alt="azflag">
+                        <p>Az</p>
+                    </div>
+                </div>
+                <div class="px-4 w-[20%] text-center font-bold font-sans">
+                    <i class="fa-solid fa-user text-[23px]"></i>
+                    <p>Giriş</p>
+                </div>
+                <div onclick="openPopup()" class="px-4 cursor-pointer w-[20%] text-center font-bold font-sans whitespace-nowrap">
+                    <i class="fa-solid fa-basket-shopping text-[25px]"></i>
+                    <p id="mobTotal">0 m</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#ad0f14] font-bold lg:p-3 flex text-[18px] xl:text-[20px] text-white w-full ">
+            <ul id="menu"
+                class="lists flex md:justify-center xl:flex-wrap xl:ml-[300px] w-full p-[18px] lg:gap-4 font-bold uppercase gap-2 font-sans ">                
+            </ul>
+            <div class="ball-count hidden xl:flex whitespace-nowrap items-center xl:pr-20">
+                <p>0 bal </p>
+                <i class="fa fa-question" aria-hidden="true"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="promo-c lg:mt-6 max-w-[95%] m-auto mb-[30px]">
+            <div class="bg-[#f1f1f1] flex justify-center items-center w-full h-full py-[18px] ">
+                <div class="promo-code text-[32px] font-bold hidden lg:flex">
+                    <p class="text-[#363636]">Promo kodunuz var?
+                        <span class="text-[#0f9675]">Endirimdən istifadə edin! </span>
+                    </p>
+                </div>
+                <div class="inp-code flex ml-[40px] ">
+                    <input type="text" name="" id=""
+                        class="border border-[#0f9675] text-[18px] font-bold  bg-white outline-none rounded-md px-[10px] w-full h-[39px]"
+                        placeholder="Promo kodu daxil edin">
+                    <button
+                        class="text-[18px] h-[39px] rounded-md font-bold text-white bg-[#0f9675] mx-2 px-[21px] ">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[95%] m-auto">
+            <div class="bg-[#f1f1f1] py-[14px] mb-[19px]">
+                <ul
+                    class="md:text-[23px] text-[#363636] whitespace-nowrap md:ml-[20px] gap-[10px] md:gap-[19px] font-bold flex flex-wrap">
+                    <li><a href="">Hamısı</a></li>
+                    <li><a href="">Toyuqlu</a></li>
+                    <li><a href="">Et ile</a></li>
+                    <li><a href="">Vegetarian</a></li>
+                    <li><a href="">Acili</a></li>
+                </ul>
+            </div>
+
+            <div id="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+            </div>
+        </div>
+
+        <div id="bgBlur" onclick="openPopup()" class="bg-[#00000038] hidden fixed place-items-center inset-0">
+            <div onclick="dayan(event)"
+                class="pop-up w-full h-[100vh] md:h-auto md:min-h-[200px] md:w-[650px] px-[20px] py-[10px]  relative bg-white">
+                <div class="flex justify-between">
+                    <p class="text-[23px] font-bold">Səbət</p>
+                    <p class="grid cursor-pointer font-bold" onclick="openPopup()">Bağla X</p>
+                </div>
+                <div class="basket-count">
+                </div>
+                <div id="basket-content"></div>     
+                <div class="md:text-[20px] flex justify-between mt-5 font-bold">
+                    <a class=" bg-[#ad0f14] text-white px-[40px] py-[8px]">Menyuya keçin</a>
+                    <button class="total-price"></button>
+                </div>
+            </div>
+        </div>
+        <div id="bgBlur2" onclick="openPizza()"
+            class="bg-[#00000038] text-center hidden fixed place-items-center inset-0">
+        </div>
+    </main>
+
+    <footer class="bg-[#AD0F14]">
+        <div class="flex mt-5 flex-col md:flex-row justify-between items-center p-6 dark:divide-gray-600 ">
+            <div class="whitespace-nowrap mx-4 mb-4 md:mb-0">
+                <span class="text-[12px] md:text-[19px] font-bold text-white">© PJA 2024</span>
+            </div>  
+    
+            <ul class="lg:text-[18px] text-[15px] items-center flex md:flex-row flex-col text-center flex-wrap justify-center gap-2 md:gap-3 lg:gap-5 font-bold text-white">
+                <li>
+                    <a href="#" class="hover:text-[#d6878a]">Haqqımızda</a>
+                </li>
+                <li class="whitespace-nowrap">
+                    <a href="#" class="hover:text-[#d6878a]">Sual və Cavab</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-[#d6878a]">Karyera</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-[#d6878a]">Xəmir</a>
+                </li>
+                <li class="whitespace-nowrap">
+                    <a href="#" class="hover:text-[#d6878a]">Papa Talk - Şərtlər və Qaydalar</a>
+                </li>
+            </ul>
+    
+            <div class="flex items-center justify-center gap-4 mt-4 md:mt-0">
+                <div class="w-[150px] sm:w-[180px] md:w-[200px]">
+                    <img src="../img/footer-images-az-AZ.png" alt="img" class="border-r-2 w-full border-r-[#eee]">
+                </div>
+                <div class="flex items-center justify-center gap-4 sm:gap-6 md:gap-10">
+                    <i class="fa-brands fa-facebook-f text-white text-[22px]"></i>
+                    <i class="fa-brands fa-twitter text-white text-[22px]"></i>
+                    <i class="fa-brands fa-instagram text-white text-[22px]"></i>
+                    <img src="../img/tripadvisor (1).png" class="w-[20px] h-[20px] sm:w-[25px] sm:h-[25px] md:w-[30px] md:h-[30px] object-cover" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/header.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/details.js"></script>
+    <script src="../js/category.js"></script>
+</body>
+
+</html>

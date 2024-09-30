@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PapaJohns</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/stylee.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="src/output.css" rel="stylesheet"> -->
+    <style>
+        .lists {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            font-family: "Open Sans Condensed", Arial, sans-serif;
+        }
+
+        .lists::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="">
+        <div class="relative pt-5">
+            <a class="w-[58px] h-[44px] lg:w-[160px] lg:pt-[15px]  xl:w-[270px] xl:left-5 xl:top-8 mx-4 justify-center absolute "
+                href="#">
+                <img src="img/pj_logo_web_new.png" class="w-full" alt="logo">
+            </a>
+            <div class="header-list hidden lg:flex justify-between px-10 text-[20px] ml-[80px]  ">
+                <div class="ml-24 z-0">
+                    <ul class="flex text-[23px] font-bold">
+                        <li><a href="" class="px-3">Restoranlar</a></li>
+                        <li><a href="" class="px-3">PapaBonus</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex">
+                    <div class="flex relative font-bold font-sans text-center px-10">
+                        <img src="img/flag_az.png" class="w-[33px] h-[33px]" alt="azflag">
+                        <p>Azerbaycanca</p>
+                        <i class="fa-solid fa-chevron-down absolute right-5 top-2"></i>
+                    </div>
+
+                    <div class="px-6 font-bold">
+                        Girish/Qeydiyyat
+                    </div>
+                    <div onclick="openPopup()"
+                        class="text-center cursor-pointer font-bold font-sans px-4 whitespace-nowrap">
+                        <i class="fa-solid fa-basket-shopping text-[25px]"></i>
+                        <p id="deskTotal">0 m</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mobile-nav lg:hidden flex gap-[40px] ml-[26%] justify-center">
+                <div class="w-[20%] px-4">
+                    <div class="font-bold w-[25px] h-[25px] font-sans text-center">
+                        <img src="img/flag_az.png" class="w-full" alt="azflag">
+                        <p>Az</p>
+                    </div>
+                </div>
+                <div class="px-4 w-[20%] text-center font-bold font-sans">
+                    <i class="fa-solid fa-user text-[23px]"></i>
+                    <p>Giriş</p>
+                </div>
+                <div onclick="openPopup()"
+                    class="px-4 cursor-pointer w-[20%] text-center font-bold font-sans whitespace-nowrap">
+                    <i class="fa-solid fa-basket-shopping text-[25px]"></i>
+                    <p id="mobTotal">0 m</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#ad0f14] font-bold lg:p-3 flex text-[18px] xl:text-[20px] text-white w-full ">
+            <ul id="menu"
+                class="lists flex md:justify-center xl:flex-wrap xl:ml-[200px] w-full p-[18px] lg:gap-4 font-bold uppercase gap-2 font-sans ">
+            </ul>
+            <div class="ball-count hidden xl:flex whitespace-nowrap items-center xl:pr-20">
+                <p>0 bal </p>
+                <i class="fa fa-question" aria-hidden="true"></i>
+            </div>
+        </div>
+    </header>
+    <main class="bg-white min-h-[60vh]">
+        <!-- SLIDER YAZ -->
+        <div class="promo-c lg:mt-6  max-w-[95%] m-auto mb-[30px]">
+            <div class="bg-[#f1f1f1] flex justify-center items-center w-full h-full py-[18px] overflow-hidden ">
+                <div class="promo-code text-[32px] font-bold hidden lg:flex">
+                    <p class="text-[#363636]">Promo kodunuz var?
+                        <span class="text-[#0f9675]">Endirimdən istifadə edin! </span>
+                    </p>
+                </div>
+                <div class="inp-code flex ml-[40px] ">
+                    <input type="text" name="" id=""
+                        class="border border-[#0f9675] text-[18px] font-bold bg-white outline-none rounded-md px-[10px] w-full h-[39px]"
+                        placeholder="Promo kodu daxil edin">
+                    <button
+                        class="text-[18px] h-[39px] rounded-md font-bold text-white bg-[#0f9675] mx-2 px-[21px] ">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/slider1.png" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider2.png" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider3.png" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider4.png" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider5.png" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider6.jpg" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider7.png" alt="slider"></div>
+                <div class="swiper-slide"><img src="img/slider8.jpg" alt="slider"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+    <footer class="bg-[#AD0F14]">
+        <div class="flex mt-5 flex-col md:flex-row justify-between items-center p-6 dark:divide-gray-600 ">
+            <div class="whitespace-nowrap mx-4 mb-4 md:mb-0">
+                <span class="text-[12px] md:text-[19px] font-bold text-white">© PJA 2024</span>
+            </div>  
+    
+            <ul class="lg:text-[18px] text-[15px] items-center flex md:flex-row flex-col text-center flex-wrap justify-center gap-2 md:gap-3 lg:gap-5 font-bold text-white">
+                <li>
+                    <a href="#" class="hover:text-[#d6878a]">Haqqımızda</a>
+                </li>
+                <li class="whitespace-nowrap">
+                    <a href="#" class="hover:text-[#d6878a]">Sual və Cavab</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-[#d6878a]">Karyera</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-[#d6878a]">Xəmir</a>
+                </li>
+                <li class="whitespace-nowrap">
+                    <a href="#" class="hover:text-[#d6878a]">Papa Talk - Şərtlər və Qaydalar</a>
+                </li>
+            </ul>
+    
+            <div class="flex items-center justify-center gap-4 mt-4 md:mt-0">
+                <div class="w-[150px] sm:w-[180px] md:w-[200px]">
+                    <img src="img/footer-images-az-AZ.png" alt="img" class="border-r-2 w-full border-r-[#eee]">
+                </div>
+                <div class="flex items-center justify-center gap-4 sm:gap-6 md:gap-10">
+                    <i class="fa-brands fa-facebook-f text-white text-[16px] sm:text-[18px] md:text-[22px]"></i>
+                    <i class="fa-brands fa-twitter text-white text-[16px] sm:text-[18px] md:text-[22px]"></i>
+                    <i class="fa-brands fa-instagram text-white text-[20px] sm:text-[18px] md:text-[22px]"></i>
+                    <img src="img/tripadvisor (1).png" class="w-[20px] h-[20px] sm:w-[25px] sm:h-[25px] md:w-[30px] md:h-[30px] object-cover" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+    <script src="js/header.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/details.js"></script>
+</body>
+
+</html>
