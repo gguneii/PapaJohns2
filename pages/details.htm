@@ -23,13 +23,24 @@
         .lists::-webkit-scrollbar {
             display: none;
         }
+        .pop-up {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .pop::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <header class="">
         <div class="relative pt-5">
-            <a class="w-[58px] h-[44px] lg:w-[160px] lg:pt-[15px]  xl:w-[270px] xl:left-5 xl:top-8 mx-4 justify-center absolute "
+            <a class="w-[58px] h-[44px] lg:w-[160px] lg:pt-[15px] xl:w-[270px] xl:left-5 xl:top-8 mx-4 justify-center absolute "
                 href="#">
                 <img src="../img/pj_logo_web_new.png" class="w-full" alt="logo">
             </a>
@@ -66,11 +77,11 @@
                         <p>Az</p>
                     </div>
                 </div>
-                <div class="px-4 w-[20%] text-center font-bold font-sans">
+                <div class="w-[20%] text-center font-bold font-sans">
                     <i class="fa-solid fa-user text-[23px]"></i>
                     <p>Giriş</p>
                 </div>
-                <div onclick="openPopup()" class="px-4 cursor-pointer w-[20%] text-center font-bold font-sans whitespace-nowrap">
+                <div onclick="openPopup()" class="pr-3 cursor-pointer w-[20%] text-center font-bold font-sans whitespace-nowrap">
                     <i class="fa-solid fa-basket-shopping text-[25px]"></i>
                     <p id="mobTotal">0 m</p>
                 </div>
@@ -89,14 +100,14 @@
     <main class="min-h-[60vh]">
         <div id="bgBlur" onclick="openPopup()" class="bg-[#00000038] hidden fixed place-items-center inset-0">
             <div onclick="dayan(event)"
-                class="pop-up w-full h-[100vh] md:h-auto md:min-h-[200px] md:w-[650px] px-[20px] py-[10px] relative bg-white">
+                class="pop-up w-full md:max-h-auto md:h-auto overflow-y-auto h-full md:min-h-[200px] md:w-[650px] px-[20px] py-[10px] bg-white">
                 <div class="flex justify-between">
                     <p class="text-[23px] font-bold">Səbət</p>
                     <p class="grid cursor-pointer font-bold" onclick="openPopup()">Bağla X</p>
                 </div>
                 <div class="basket-count">
                 </div>
-                <div id="basket-content"></div>
+                <div id="basket-content" class="md:max-h-[60vh] md:overflow-y-auto"></div>
                     
                 <div class="md:text-[20px] text-sm flex justify-between mt-5 font-bold">
                     <a href="" class="bg-[#ad0f14] text-white md:px-[40px] px-4 rounded-md py-[8px]">Menyuya keçin</a>
@@ -138,7 +149,7 @@
                 <div class="w-[150px] sm:w-[180px] md:w-[200px]">
                     <img src="../img/footer-images-az-AZ.png" alt="img" class="border-r-2 w-full border-r-[#eee]">
                 </div>
-                <div class="flex items-center justify-center gap-4 sm:gap-6 md:gap-10">
+                <div class="flex items-center justify-center gap-2 sm:gap-6 md:gap-10">
                     <i class="fa-brands fa-facebook-f text-white text-[22px]"></i>
                     <i class="fa-brands fa-twitter text-white text-[22px]"></i>
                     <i class="fa-brands fa-instagram text-white text-[22px]"></i>
