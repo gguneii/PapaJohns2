@@ -53,15 +53,24 @@ function showBasket(id, img, title) {
 
     const eneneviSelect = document.getElementById('enenevi-select');
     const nazikSelect = document.getElementById('nazik-select');
+    const priceDisplay = document.getElementById('price'); 
     
-    const selectedPrice = eneneviSelect.classList.contains('hidden') ? 
-        nazikSelect.value : eneneviSelect.value
+    let selectedPrice;
 
+    if (!eneneviSelect.classList.contains('hidden') && eneneviSelect.value) {
+        selectedPrice = eneneviSelect.value;
+    } 
+    else if (!nazikSelect.classList.contains('hidden') && nazikSelect.value) {
+        selectedPrice = nazikSelect.value;
+    } 
+    else if (priceDisplay) {
+        selectedPrice = priceDisplay.innerHTML; 
+    } 
     const obj = {
         id,
         img,
         title,
-        price: parseFloat(selectedPrice),
+        price: parseFloat(selectedPrice) ||0,
         count: +countDiv.innerHTML,
         total: 0
         }
@@ -105,7 +114,7 @@ function addBasket() {
                             <button onclick="calc(1, '${item.id}')" class="bg-[#0f9675] px-3 text-white">+</button>
                         </div>  
                         <div class="flex justify-between">
-                            <p class="whitespace-nowrap px-2">Price: ${item.total.toFixed(2)}m</p>
+                            <p class="whitespace-nowrap px-2">Price: ${item.total}m</p>
                             <p onclick="deleteBasket('${item.id}')" class="text-[#0f9675] font-bold text-[20px] px-5 cursor-pointer ">X</p>
                         </div>  
                     </div>
